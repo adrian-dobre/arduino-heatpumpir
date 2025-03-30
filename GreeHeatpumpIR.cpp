@@ -363,6 +363,10 @@ void GreeYTHeatpumpIR::generateCommand(uint8_t * buffer,
     buffer[0] |= GREE_VSWING; // Enable swing by setting bit 6
     buffer[4] = swingV;
   }
+  else if (swingV != GREE_VDIR_AUTO)
+  {
+    buffer[5] = swingV;
+  }
 }
 
 void GreeYAPHeatpumpIR::generateCommand(uint8_t * buffer,
